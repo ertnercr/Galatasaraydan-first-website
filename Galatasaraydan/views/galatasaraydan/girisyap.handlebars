@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <title>Giriş Yap - Galatasaraydan</title>
+
+<style>
+body{
+    background-image: url(/arkaplan.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+    /* background-color: transparent !important; */
+    --bs-body-bg:transparent !important;
+}
+.navbar{
+    background-color: #F7931A;
+}
+li.nav-item{
+    background-color: rgb(120, 12, 7);
+    margin: 0.2rem;
+    border: 2px solid #F7931A;
+    border-radius: 12px;
+    padding-left: 1px;
+    padding-right: 1px;
+    font-style: bold;
+}
+li a{
+color: #F7931A !important;
+}
+.btn{
+    border-color: #F7931A;
+}
+.btn:hover{
+    background-color: rgb(120, 12, 7);
+    border-color: rgb(120, 12, 7);
+}
+
+#girisyap{
+    position: absolute;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 550px;
+    background-color:#F7931A;
+    margin: auto auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 0 10px black;
+    -webkit-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin-top: 2rem;
+    font-family: "Open Sans","sans-serif";
+}
+header{
+
+    text-align: center;
+    color: rgb(179, 12, 7);
+    font-weight: bolder;
+    font-size: 35px;
+    
+}
+#girisyazi{
+    margin-bottom: 50px;
+    letter-spacing: 0.2px;
+}
+.formlar{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(120, 12, 7);
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.2px;
+}
+#socialspan{
+    
+    color: rgb(179, 12, 7);
+    font-style:oblique;
+    font-size: 18px;
+    font-weight: bold;
+}
+button.girisyapbuton{
+    color: #F7931A;
+    border-radius: 4px;
+    border-color: #9c1b17;
+    background-color:#9c1b17;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right:10px;
+    margin-top: 1.4rem;
+    
+}
+button.girisyapbuton:hover{
+    color: #9c1b17;
+    border-color: black;
+    background-color:black;
+
+}
+div.buttons{
+    margin:0;
+    
+}
+button.facebook{
+    color: white;
+    background-color: #4464b2;
+    border-color: #4464b2;
+    padding: 5px;
+    border-radius:9px;
+}
+button.facebook:hover{
+    background-color:#1952c5;
+}
+
+button.twitter{
+    color: white;
+    background-color: #28a9e0;
+    border-color: #28a9e0;
+    padding: 5px;
+    border-radius:9px;
+}
+
+button.twitter:hover{
+
+    background-color: #0085be;
+}
+button.google{
+    color: white;
+    background-color:#da4735; ;
+    border-color: #da4735;
+    padding: 5px;
+    border-radius:9px;
+}
+
+button.google:hover{
+
+
+    background-color: #c92610;
+}
+i{
+    color: white;
+}
+input.giris{
+    width: 300px;
+    height: 27px;
+    border-radius: 8px;
+    border: none;
+}
+li.nav-item:hover{
+background-color:#930829;
+}
+.renk{
+  color: #F7931A;
+
+}
+.arags{
+  color: #F7931A;
+  background-color: rgb(120, 12, 7);
+  border-radius: 3000px;
+}
+.arags:hover{
+  color: #F7931A;
+}
+</style>
+
+</head>
+<body>
+    {{>navbar}}
+    <section id="girisyap">
+        {{!-- ÜYE OLUNDUĞUNDA YADA HATALI GİRİŞTE UYARI MESAJI --}}
+        
+        <header id="girisyazi">GİRİŞ YAP</header>
+            {{#if sessionFlash.message}}
+            <div class="{{sessionFlash.type}}" role="alert">{{sessionFlash.message}}</div>
+            {{/if}}
+            <form action="/users/girisyap" method="post" >
+        <div class="formlar">
+            <label for="username">Kullanıcı Adı:</label><br>
+            <input class="giris" type="text" id="userID" name="Username" placeholder="Kullanıcı Adınızı Girin..."> <br>
+            <label for="password">Şifre:</label> <br>
+            <input class="giris" type="password" id="userPW" name="UserPW" placeholder="Şifrenizi Girin..."> <br>
+            <input class="check" type="checkbox" id="hatirla" name="kullanicihatirla">
+            <label for="hatirla">Kullanıcıyı Hatırla</label> <br>
+            <button type="submit" class="girisyapbuton">Giriş Yap</button>
+            
+            
+            
+        </div>
+        </form>
+
+            <div class="socialmedias">
+                <span id="socialspan">Yada Aşağıdakilerden Birini Seçin.<hr/></span>
+            </div>
+            <div class="buttons">
+                <button class="facebook"><i class="fa-brands fa-facebook-f"></i>Facebook</button>
+                <button class="twitter"><i class="fa-brands fa-twitter"></i>Twitter</button>
+                <button class="google"><i class="fa-brands fa-google-plus-g"></i>Google</button>
+              </div>
+        
+               
+
+    </section>
+
+
+
+</body>
+</html>

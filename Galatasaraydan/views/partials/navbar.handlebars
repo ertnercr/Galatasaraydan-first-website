@@ -1,0 +1,53 @@
+  <!-- top menü -->
+        <nav class="navbar py-1 navbar-expand-lg navbar-light">
+            <div class="container-fluid"> 
+              <a class="navbar-brand" href="../"><img src="/ana sayfa fotoğraflar/Galatasaraydan_Logo.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  
+                
+                  
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../futbol">FUTBOL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../basketbol">BASKETBOL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../voleybol">VOLEYBOL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../diger">DİĞER BRANŞLAR</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../tarih" >GALATASARAY'IN TARİHİ</a>
+                  </li>
+                  
+                  {{#unless displayLink}}
+
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/users/uyeol">ÜYE OL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/users/girisyap">GİRİŞ YAP</a>
+                  </li>
+                  {{/unless}}
+                  {{#if displayLink}} 
+                    <li class="nav-item">
+                    <a class="nav-link active" href="/admin/panel">ADMIN</a>
+                  </li>
+                  
+                    <li class="nav-item">
+                    <a class="nav-link active" href="/users/cikisyap">ÇIKIŞ YAP</a>
+                  </li>
+
+                  {{/if}}
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+            <!-- top menü bitti -->
